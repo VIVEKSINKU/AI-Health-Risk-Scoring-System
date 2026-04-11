@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-ink text-white overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Common Buttons */
+  .btn-teal {
+    @apply bg-teal text-white px-7 py-3 rounded-md text-sm font-semibold no-underline border-none cursor-pointer font-sans transition-all duration-200 hover:bg-teal-2 hover:-translate-y-px inline-block;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-white px-7 py-3 rounded-md text-sm font-semibold no-underline border border-white/20 cursor-pointer font-sans transition-all duration-200 hover:border-white/50 hover:bg-white/5 inline-block;
+  }
+  
+  /* Shared Sections */
+  .section-tag {
+    @apply text-[0.7rem] font-bold tracking-[0.18em] uppercase text-teal-2 mb-4;
+  }
+  .section-title {
+    @apply font-serif text-[clamp(2rem,4vw,3.2rem)] leading-[1.1] text-ink mb-4;
+  }
+  .section-sub {
+    @apply text-base text-muted max-w-[480px] leading-[1.7] mb-14 font-normal;
+  }
+}
