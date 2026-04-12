@@ -2,11 +2,15 @@ import os
 import pickle
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "model")
 
-model_path = os.path.join(BASE_DIR, "model", "model.pkl")
-vectorizer_path = os.path.join(BASE_DIR, "model", "vectorizer.pkl")
-label_path = os.path.join(BASE_DIR, "model", "label_encoder.pkl")
 
-model = pickle.load(open(model_path, "rb"))
-vectorizer = pickle.load(open(vectorizer_path, "rb"))
-label_encoder = pickle.load(open(label_path, "rb"))
+def _load(name):
+    return pickle.load(open(os.path.join(MODEL_DIR, name), "rb"))
+
+
+unified_model = _load("unified_model.pkl")
+vectorizer    = _load("vectorizer.pkl")
+label_encoder = _load("label_encoder.pkl")
+scaler        = _load("scaler.pkl")
+model_meta    = _load("model_meta.pkl")
