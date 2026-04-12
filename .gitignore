@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Old model artifacts (replaced by unified model)
+backend/model/sleep_model.pkl
+backend/model/heart_model.pkl
+backend/model/diabetes_model.pkl
+backend/model/model.pkl
+backend/model/diabetes_meta.pkl
+backend/model/heart_stats.pkl
+backend/model/sleep_label_encoder.pkl
+
+# Datasets (too large for git)
+datasets/
+
+# Node
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.sw?
