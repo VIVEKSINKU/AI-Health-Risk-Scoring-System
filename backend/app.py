@@ -53,7 +53,7 @@ def predict():
         overall_score = 0.0
         risk_label    = "Low"
 
-    recommendations = get_recommendations(
+    rec_result = get_recommendations(
         structured_risks=[],            
         symptom_predictions=predictions,
         bmi=bmi,
@@ -68,7 +68,8 @@ def predict():
         "fused_predictions":    predictions,
         "structured_risks":     [],            
         "symptom_predictions":  predictions,
-        "recommendations":      recommendations,
+        "recommendations":      rec_result.get("sections", []),
+        "gemini_powered":       rec_result.get("gemini_powered", False),
     })
 
 

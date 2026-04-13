@@ -3,3 +3,6 @@ flask-cors
 scikit-learn
 pandas
 numpy
+scipy
+python-dotenv
+google-genai
